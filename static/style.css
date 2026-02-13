@@ -10,15 +10,15 @@
 
 body {
     font-family: 'Nunito', sans-serif;
-    background: #000000;
+    background: lab(94.6% 6.77 2.44);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: clamp(20px, 3vw, 20px);
     position: relative;
-    background-image: radial-gradient(circle at 10px 10px, #f5d5d5 2px, transparent 2px), 
-                      radial-gradient(circle at 30px 30px, #f5d5d5 2px, transparent 2px);
+    background-image: radial-gradient(circle at 10px 10px, #b76a6a 2px, transparent 2px), 
+                      radial-gradient(circle at 30px 30px, #862b2b 2px, transparent 2px);
     background-size: 40px 40px;
     animation: backgroundMove 20s linear infinite;
 }
@@ -31,9 +31,8 @@ body {
 /* Container principal - AGORA RESPONSIVO */
 .container {
     width: 900px;
-    background: white;
+    background: rgb(255, 255, 255);
     border-radius: clamp(20px, 5vw, 40px);
-    box-shadow: 10px;
     position: relative;
     z-index: 10px;
     overflow: hidden;
