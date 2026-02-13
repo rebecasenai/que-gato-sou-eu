@@ -10,12 +10,12 @@
 
 body {
     font-family: 'Nunito', sans-serif;
-    background: #fcefe8;
+    background: #000000;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: clamp(10px, 3vw, 20px);
+    padding: clamp(20px, 3vw, 20px);
     position: relative;
     background-image: radial-gradient(circle at 10px 10px, #f5d5d5 2px, transparent 2px), 
                       radial-gradient(circle at 30px 30px, #f5d5d5 2px, transparent 2px);
@@ -30,17 +30,14 @@ body {
 
 /* Container principal - AGORA RESPONSIVO */
 .container {
-    max-width: min(800px, 100%);
-    width: 100%;
+    width: 900px;
     background: white;
     border-radius: clamp(20px, 5vw, 40px);
-    box-shadow: 0 20px 40px rgba(241, 124, 143, 0.2), 
-                0 10px 20px rgba(0, 0, 0, 0.05),
-                0 0 0 8px #ffe4e1;
+    box-shadow: 10px;
     position: relative;
-    z-index: 10;
+    z-index: 10px;
     overflow: hidden;
-    margin: 0 auto;
+    margin: 5px;
 }
 
 /* Header com ondinha - RESPONSIVO */
@@ -115,7 +112,7 @@ body {
 .input-label {
     display: block;
     font-size: clamp(1.1rem, 3.5vw, 1.4rem);
-    font-weight: 700;
+    font-weight: 500px;
     color: #b15b5b;
     margin-bottom: 16px;
     text-align: center;
