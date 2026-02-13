@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gatinho Mágico ✨ Descubra seu gato interior</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header com onda -->
+        <div class="header-wave">
+            <h1>✨ GATINHO MÁGICO ✨</h1>
+            <p>descubra qual gato você é</p>
+            
+            <!-- Gatinhos decorativos -->
+            <div class="cat-decorations">
+                <span>😺</span>
+                <span>😸</span>
+                <span>😻</span>
+                <span>😽</span>
+                <span>🐈</span>
+            </div>
+        </div>
+
+        <!-- Conteúdo principal -->
+        <div class="content-card">
+            <!-- Formulário -->
+            <div class="form-group">
+                <label class="input-label">
+                    <span>🐾</span> 
+                    Qual seu nome?
+                </label>
+                
+                <form action="/cat" method="post">
+                    <div class="input-wrapper">
+                        <input 
+                            type="text" 
+                            name="nome" 
+                            class="input-field" 
+                            placeholder="ex: Lili, Bichano, Miau..."
+                            required
+                        >
+                        <button type="submit" class="cat-button">
+                            <span>🔮</span>
+                            Descobrir meu gato
+                            <span>🐱</span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Mensagens de erro -->
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="flash-message">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+
+            <!-- Resultado -->
+            {% if url_imagem %}
+            <div class="result-section">
+                <div class="result-badge">
+                    🎉 ENCONTRAMOS SEU GÊMEO FELINO! 🎉
+                </div>
+
+                <div class="image-frame">
+                    <div class="cat-image-wrapper">
+                        <img src="{{ url_imagem }}" alt="Seu gato gêmeo" class="imagem_gato">
+                    </div>
+                </div>
+
+                <div class="name-tag">
+                    <span class="label">gatinho(a)</span>
+                    <span class="name">{{ nome }}</span>
+                </div>
+
+                <div class="final-message">
+                    ✨ Este gatinho é você, {{ nome }}! ✨
+                </div>
+
+                <div class="paw-prints">
+                    🐾 🐱 🐾 🐱 🐾
+                </div>
+            </div>
+
+            {% else %}
+            <!-- Estado vazio -->
+            <div class="empty-state">
+                <div class="empty-emoji">
+                    😴
+                </div>
+                <h3 class="empty-title">
+                    Aguardando você...
+                </h3>
+                <p class="empty-text">
+                    Digite seu nome e descubra seu gato interior!
+                </p>
+                <div style="font-size: 2rem; margin-top: 20px; opacity: 0.5;">
+                    🐈 🐈‍⬛ 🐈
+                </div>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Rodapé -->
+        <div class="footer">
+            <span>❤️</span> feito com ronrons para você <span>❤️</span>
+        </div>
+    </div>
+</body>
+</html>
